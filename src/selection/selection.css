@@ -1,0 +1,23 @@
+.nav-container {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+nav {
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70rem;
+  border-radius: 1rem;
+  background-image: linear-gradient(
+    to top left,
+    black,
+    silver,
+    rgb(198, 197, 197)
+  );
+  color: aliceblue;
+  font-size: 1.4rem;
+}

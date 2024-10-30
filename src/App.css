@@ -1,0 +1,24 @@
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+  justify-content: center;
+  /* min-height: 100rem; */
+  width: 80rem;
+
+  border: 5px solid black;
+  background-image: linear-gradient(to top left, white, beige, silver);
+}

@@ -1,0 +1,156 @@
+.container {
+  display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+  justify-content: center;
+  /* width: auto; */
+}
+
+.generic-centering-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-container {
+  height: 30rem;
+  margin: 2rem;
+  margin-bottom: 5rem;
+}
+
+p {
+  margin: 5px;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h3 {
+  margin: 5px;
+  height: 3rem;
+}
+
+#verse-input {
+  display: grid;
+  grid-auto-flow: row;
+  min-height: 20rem;
+  border: 1px solid gray;
+}
+
+.input-section {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  border: 1px solid gray;
+  width: 20rem;
+}
+
+.input {
+  border-radius: 10px;
+  height: 1.5rem;
+  background-color: bisque;
+  width: 5rem;
+}
+
+.stacked-input {
+  margin: 0.5rem;
+  display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.data-text {
+  min-height: 5rem;
+  width: 15rem;
+}
+
+form {
+  display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-button-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.save-button {
+  margin: 1rem;
+  width: 20rem;
+}
+
+/*------Boxes for verse display----*/
+#box-container {
+  min-height: 10rem;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid gray;
+  border-radius: 10px; */
+}
+
+#num-inputs {
+  display: flex;
+}
+
+.three-verses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.verse-box {
+  display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+  justify-content: left;
+  border: 1px solid gray;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+#button-container {
+  display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
+  border: 1px solid gray;
+  padding: 2rem;
+}
+
+.bottom-buttons {
+  width: 10rem;
+  padding: 0.25rem;
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+
+ul {
+  display: grid;
+  grid-auto-flow: row;
+  list-style-type: none;
+}
+
+#verse-box-outer {
+  display: grid;
+  grid-auto-flow: column;
+  border: 1px solid gray;
+  border-radius: 20px;
+  margin: 2rem;
+}
+
+#replace-button {
+  display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+  justify-content: center;
+}
