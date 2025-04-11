@@ -16,6 +16,27 @@
   height: 30rem;
   margin: 2rem;
   margin-bottom: 5rem;
+  padding-bottom: 5rem;
+}
+
+.list-container {
+  height: 30rem;
+  margin-top: 20rem;
+  margin-top: 10rem;
+}
+
+.edit-button {
+  margin: 5px;
+  border-radius: 0.4rem;
+}
+
+#edit-form {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+h2 {
+  color: red;
 }
 
 p {
@@ -34,8 +55,9 @@ h3 {
 #verse-input {
   display: grid;
   grid-auto-flow: row;
-  min-height: 20rem;
+  min-height: 25rem;
   border: 1px solid gray;
+  margin: 2rem;
 }
 
 .input-section {

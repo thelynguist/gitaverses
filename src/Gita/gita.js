@@ -1,17 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./gita.css";
 import verses from "./gita_verses.json";
 import Input from "./Input/Input";
 import VerseList from "./VerseList/VerseList";
-//import testingStuff from "../testing";
 
 export default function Gita() {
-  const [chapter, setChpt] = useState(0);
-  const [data, setData] = useState(
-    verses.books[0].chapters[Number(chapter)].verses
-  );
+  const [data, setData] = useState([]);
   const [tempData, setTempData] = useState([]);
   const [fullData, setFullData] = useState(verses.books[0].chapters);
+  const [chapter, setChpt] = useState("");
+  const [id, setId] = useState("");
 
   //--Set the chapter that is being manipulated--//
   function replaceChapter(newChapter) {
@@ -24,11 +22,25 @@ export default function Gita() {
     );
   }
 
+  const verseIDs = data.forEach((verse) => {});
+
+  const fullData2 = fullData.map((chapter) => {
+    return chapter.verses.map((verse) => {
+      return { ...verse, ID: crypto.randomUUID() };
+    });
+  });
+
   function logFullData() {
-    console.log(fullData);
+    console.log(
+      fullData.map((chapter) => {
+        return chapter.verses.map((verse) => {
+          return { ...verse, ID: crypto.randomUUID() };
+        });
+      })
+    );
   }
   function logData() {
-    console.log(data);
+    console.log(verses.books[0].chapters[0]);
   }
 
   //--Map through the verse and replace it with the new one--//
@@ -58,8 +70,15 @@ export default function Gita() {
 
   function changeChpt(num) {
     setChpt(num);
-    setData(verses.books[0].chapters[num - 1].verses);
   }
+
+  // useEffect(() => {
+  //   setData(verses.books[0].chapters[chapter - 1].verses);
+  // }, [chapter]);
+
+  useEffect(() => {
+    console.log(chapter);
+  });
 
   return (
     <div>
@@ -67,8 +86,11 @@ export default function Gita() {
         verses={data}
         onAddVerse={addVerse}
         chapter={chapter}
+        setChpt={setChpt}
         changeChpt={changeChpt}
         addTempData={addTempData}
+        id={id}
+        setId={setId}
       />
       <VerseList
         verses={tempData}
@@ -78,7 +100,10 @@ export default function Gita() {
         replaceVerse={replaceVerse}
         logFullData={logFullData}
         replaceChapter={replaceChapter}
+        fullData2={fullData2}
         data={data}
+        chapter={chapter}
+        id={id}
       />
     </div>
   );
