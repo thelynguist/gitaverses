@@ -123,9 +123,9 @@ export default function VerseList({
   return (
     <div id="list-container">
       <div id="box-container">
-        <div className="header-container">
+        {/* <div className="header-container">
           <h2>Recently Translated Verses</h2>
-        </div>
+        </div> */}
         <ul>
           {verses.map((verse) => {
             return (

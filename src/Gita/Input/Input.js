@@ -39,6 +39,10 @@ export default function Input({
   const [notes, setNotes] = useState("");
   const [sourcename, setSourcename] = useState("");
   const [editValue, setEditValue] = useState("");
+  const [grammarNotes, setGrammarNotes] = useState("");
+  const [developerNotes, setDeveloperNotes] = useState("");
+  const [citation, setCitation] = useState("");
+
   //Net Ninja Training Section
   const db = getFirestore();
   const colRef = collection(db, `Chapter ${4}`);
@@ -84,6 +88,9 @@ export default function Input({
     if (winthrop) updatedVerse.winthrop = winthrop;
     if (mitchell) updatedVerse.mitchell = mitchell;
     if (notes) updatedVerse.notes = notes;
+    if (grammarNotes) updatedVerse.grammarNotes = grammarNotes;
+    if (developerNotes) updatedVerse.developerNotes = developerNotes;
+    if (citation) updatedVerse.citation = citation;
 
     try {
       //CHAPTER MUST BE SELECTED FOR THIS TO WORK.
@@ -105,6 +112,9 @@ export default function Input({
         setWinth("");
         setMitch("");
         setNotes("");
+        setGrammarNotes("");
+        setDeveloperNotes("");
+        setCitation("");
       });
     } catch (error) {
       alert("There was an issue updating the verse: ", error);
@@ -124,6 +134,9 @@ export default function Input({
       setWinth("");
       setMitch("");
       setNotes("");
+      setGrammarNotes("");
+      setDeveloperNotes("");
+      setCitation("");
     });
   }
   function createVerse(e) {
@@ -141,6 +154,9 @@ export default function Input({
       winthrop,
       mitchell,
       notes,
+      grammarNotes,
+      developerNotes,
+      citation,
     });
     const newVerse = {
       id: Date.now(),
@@ -153,6 +169,9 @@ export default function Input({
       winthrop,
       mitchell,
       notes,
+      grammarNotes,
+      developerNotes,
+      citation,
     };
     //onAddVerse(newVerse);
     createList(newVerse);
@@ -162,6 +181,9 @@ export default function Input({
     setWinth("");
     setMitch("");
     setNotes("");
+    setGrammarNotes("");
+    setDeveloperNotes("");
+    setCitation("");
     console.log(newVerse);
   }
 
@@ -291,6 +313,26 @@ export default function Input({
               addText={(e) => setNotes(e.target.value)}
             />
           </div>
+          {/*Go back and figure out where to set up these variables again.*/}
+          <div className="three-verses">
+            <VerseInput
+              inputType={"Grammar Assistance"}
+              inputValue={grammarNotes}
+              addText={(e) => setGrammarNotes(e.target.value)}
+            />
+
+            <VerseInput
+              inputType={"Developer Notes"}
+              inputValue={developerNotes}
+              addText={(e) => setDeveloperNotes(e.target.value)}
+            />
+
+            <VerseInput
+              inputType={"Citation"}
+              inputValue={citation}
+              addText={(e) => setCitation(e.target.value)}
+            />
+          </div>
 
           <div className="save-button-div">
             <button className="save-button" onClick={createVerse}>
@@ -300,7 +342,7 @@ export default function Input({
         </form>
         <div className="save-button-div">
           <button className="save-button" onClick={updateVerse}>
-            Replace Verse
+            Partial Verse Replace
           </button>
         </div>
         <div className="save-button-div">
